@@ -1,16 +1,17 @@
 import time
 
-def start(cooldown):
-    global start
-    global cd
+class CooldownTimer(object):
 
-    start = time.time()
-    cd = cooldown
+    def __init__(self, time):
+        self.cooldown_time = time
+        self.start_time = 0
 
+    def start(self):
+        self.start_time = time.time()
 
-def check():
-    if time.time() >= (start + cd):
-        print(time.time())
-        return True
-    else:
-        return False
+    def check(self):
+        if time.time() >= (self.start_time + self.cooldown_time):
+            print(time.time())
+            return True
+        else:
+            return False
