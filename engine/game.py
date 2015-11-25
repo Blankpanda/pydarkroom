@@ -1,5 +1,4 @@
-import init
-import cooldown
+from engine import init, cooldown
 import threading
 from multiprocessing.pool import ThreadPool
 
@@ -24,10 +23,9 @@ def start():
                                      # since user input is handled
                                      # on a different thread.
     while True:
-
+        # testing cooldown structure
         async_result = pool.apply_async(get_user_input)
         uin = async_result.get()
-        print("!!")
 
         if uin == "1" and fire_off_cooldown:
             fire_cooldown_timer.start()

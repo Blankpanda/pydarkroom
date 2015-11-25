@@ -1,4 +1,5 @@
-import init, game
+from engine import init, game
+
 
 def main():
     init.initalize()

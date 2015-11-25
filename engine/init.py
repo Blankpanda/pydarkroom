@@ -1,4 +1,4 @@
-import cooldowns
+from engine import cooldowns
 
 def initalize():
     set_cooldown_times()
