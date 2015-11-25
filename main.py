@@ -2,7 +2,7 @@ import init, game
 
 def main():
     init.initalize()
-    game.start()
+    game.build()
 
 if __name__ == '__main__':
     main()
