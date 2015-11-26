@@ -5,7 +5,7 @@ class ResourceCounter(object):
         self.modifier = 1
 
     def get_resource_counter():
-        return accum
+        return self.accum
 
-    def accum_resource_counter(value):
-        accum += (value * modifier)
+    def accum_resource_counter(self, value):
+        self.accum += (value * self.modifier)
