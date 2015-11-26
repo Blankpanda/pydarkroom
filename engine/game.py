@@ -55,8 +55,10 @@ def start():
         if uin == "1":
             wood_resource_counter = modifiers.change_modifier(wood_resource_counter, 3)
             wood_resource_counter.accum_resource_counter(1)
-            print(wood_resource_counter.get_resource_counter)
-        print(wood_resource_counter.accum_resource_counter(1))
+            print(wood_resource_counter.get_resource_counter())
+
+        wood_resource_counter.accum_resource_counter(1)
+        print(wood_resource_counter.get_resource_counter())
 
 
 def get_user_input():
