@@ -1,4 +1,4 @@
-class FireStates(object):
+class FireIntensityStates(object):
     def __init__(self,dict_states):
         self.fire_states = dict_states
 
@@ -7,4 +7,3 @@ class FireStates(object):
 
     def get_fire_state(intensity):
         return self.fire_states[intensity]
-S

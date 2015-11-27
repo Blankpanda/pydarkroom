@@ -12,7 +12,6 @@ def start():
     cds = init.get_cooldown_times() # an oject containing cooldown timers
     res = init.get_starting_resource_values() # an object containing
                                               # resource staring values
-    print(res)
      # cooldown booleans
     fire_off_cooldown = True
     wood_off_cooldown = True
