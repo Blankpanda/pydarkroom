@@ -20,7 +20,6 @@ class FireIntensityStates(object):
                 self.fire_states[i] = "The fire is blazing"
 
 
-
     def get_fire_states(self):
         return self.fire_states
 

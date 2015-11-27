@@ -66,11 +66,21 @@ def start():
         # wood_resource_counter.accum_resource_counter(1)
         # print(wood_resource_counter.get_resource_counter())
         uin = get_user_input()
-        print(flame.get_intensity_state(flame.get_current_intensity()))
-        if uin == "1":
+        # print(flame.get_intensity_state(flame.get_current_intensity()))
 
+        if uin == "1":
             flame.kindle(20)
-            print(flame.get_intensity_state(flame.get_current_intensity()))
+            flame_is_burning = True
+
+
+
+
+        if flame.check_burn_time():
+            flame.start_burn()
+            flame.burn()
+        print(flame.get_current_intensity())
+
+
 
 
 
