@@ -1,3 +1,7 @@
+# main game loop.
+# currently used as a testing ground for game mechanics
+
+
 from engine import init, cooldown, modifiers, fire
 from resources import resource
 import threading

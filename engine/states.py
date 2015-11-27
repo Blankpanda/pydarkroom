@@ -1,4 +1,8 @@
+# build and initalze different game states.
 from engine import fire
+
+
+# creates a dictionary with descriptions based on intensity
 class FireIntensityStates(object):
     def __init__(self):
         self.fire_states = {}
@@ -14,7 +18,7 @@ class FireIntensityStates(object):
                 self.fire_states[i] = "The fire is roaring"
             elif i > 90 and i < 101:
                 self.fire_states[i] = "The fire is blazing"
-        
+
 
 
     def get_fire_states(self):

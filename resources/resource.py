@@ -1,3 +1,6 @@
+# class that creates resource counters that
+# holds the number of resources obtained and
+# manipulates its value.
 class ResourceCounter(object):
     def __init__(self, item, starting_value):
         self.name = item

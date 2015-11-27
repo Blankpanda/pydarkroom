@@ -1,3 +1,5 @@
+# everything that needs to be done before the game starts.
+# we also use it get these starting values for the game.
 from engine import cooldowns , modifiers, states, fire
 from resources import resources
 
@@ -25,7 +27,7 @@ def set_base_modifiers():
 def set_fire_intensity_states():
     global fstate
     fstate = states.FireIntensityStates().get_fire_states()
-    
+
 
 
 
