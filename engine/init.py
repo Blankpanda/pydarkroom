@@ -24,19 +24,10 @@ def set_base_modifiers():
 
 def set_fire_intensity_states():
     global fstate
-    fstate = {}
-    maximum = fire.Fire().INTENSITY_MAXIMUM
-    for i in range(0, maximum):
-        if i == 0:
-            fstate[i] = "The fire is unlit"
-        elif i > 0 and i <= 20:
-            fstate[i] = "The fire is smoldering"
-        elif i > 20 and i <= 60:
-            fstate[i] = "The fire is burning"
-        elif i > 60 and i <= 90:
-            fstate[i] = "The fire is roaring"
-        elif i > 90 and i <= 100:
-            fstate[i] = "The fire is blazing"
+    fstate = states.FireIntensityStates().get_fire_states()
+    
+
+
 
 def get_fire_intensity_states():
     try:

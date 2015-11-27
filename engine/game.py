@@ -1,4 +1,4 @@
-from engine import init, cooldown, modifiers
+from engine import init, cooldown, modifiers, fire
 from resources import resource
 import threading
 from multiprocessing.pool import ThreadPool
@@ -23,6 +23,9 @@ def start():
     # resource counters
     wood_resource_counter = resource.ResourceCounter("wood",res.wood)
     stone_resource_counter = resource.ResourceCounter("stone", res.stone)
+
+    #flame objects
+    flame = fire.Fire()
 
     pool = ThreadPool(processes = 1) # holds the values of user input
                                      # since user input is handled
@@ -50,14 +53,23 @@ def start():
         #     wood_off_cooldown = True
         #     print("2 off cooldown")
         #
+        # uin = get_user_input()
+        # if uin == "1":
+        #     wood_resource_counter = modifiers.change_modifier(wood_resource_counter, 3)
+        #     wood_resource_counter.accum_resource_counter(1)
+        #     print(wood_resource_counter.get_resource_counter())
+        #
+        # wood_resource_counter.accum_resource_counter(1)
+        # print(wood_resource_counter.get_resource_counter())
         uin = get_user_input()
+        print(flame.get_intensity_state(flame.get_current_intensity()))
         if uin == "1":
-            wood_resource_counter = modifiers.change_modifier(wood_resource_counter, 3)
-            wood_resource_counter.accum_resource_counter(1)
-            print(wood_resource_counter.get_resource_counter())
 
-        wood_resource_counter.accum_resource_counter(1)
-        print(wood_resource_counter.get_resource_counter())
+            flame.kindle(20)
+            print(flame.get_intensity_state(flame.get_current_intensity()))
+
+
+
 
 
 def get_user_input():
