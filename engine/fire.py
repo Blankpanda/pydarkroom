@@ -8,7 +8,7 @@ class Fire(object):
         self.intensity = 0
         self.INTENSITY_MAXIMUM = 101 # because the dictionary that holds
                                      # fire states needs to have 100 values.
-        self.burn_rate = 5
+        self.burn_rate = 20
         self.start_time = 0
 
     def kindle(self , value):
@@ -30,14 +30,19 @@ class Fire(object):
 
     def check_burn_time(self):
         if time.time() >= (self.start_time + self.burn_rate):
-            print("T")
             return True
         else:
-            print("F")
             return False
 
     def burn(self):
         self.intensity -= 15
+        # can't go below 0.
+        if self.intesnity < 0:
+            self.intesnity = 0
+
+
+    def get_current_kindle_count(self):
+        return self.kindle_count
 
     # gets a numeric value thats holds the fires current intesnity.
     def get_current_intensity(self):

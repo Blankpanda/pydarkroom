@@ -65,21 +65,42 @@ def start():
         #
         # wood_resource_counter.accum_resource_counter(1)
         # print(wood_resource_counter.get_resource_counter())
-        uin = get_user_input()
+        # uin = get_user_input()
         # print(flame.get_intensity_state(flame.get_current_intensity()))
+        #
+        # if uin == "1":
+        #     flame.kindle(20)
+        #     flame_is_burning = True
+        # if flame.check_burn_time():
+        #     flame.start_burn()
+        #     flame.burn()
+        # print(flame.get_current_intensity())
+        #
 
-        if uin == "1":
-            flame.kindle(20)
-            flame_is_burning = True
+        # if flame.get_current_kindle_count() == 0:
+        #     print("Light the fire.")
+        #
+        # uin = get_user_input()
+        #
+        # if uin == "1" and fire_off_cooldown:
+        #     fire_cooldown_timer.start()
+        #     fire_off_cooldown = False
+        #     flame_is_burning = True
+        #     flame.kindle(20)
+        #     print(flame.get_intensity_state(flame.get_current_intensity()))
+        #
+        # if flame.check_burn_time():
+        #     flame.start_burn()
+        #     flame.burn()
+        #
+        # if fire_cooldown_timer.check() and fire_off_cooldown == False:
+        #     fire_off_cooldown = True
+        #     print("kindle off cooldown")
 
-
-
-
-        if flame.check_burn_time():
-            flame.start_burn()
-            flame.burn()
-        print(flame.get_current_intensity())
-
+        items = init.get_items()
+        print(items.hatchet.requirements)
+        print(items.pickaxe.get_property())
+        print(items.hatchet.get_property())
 
 
 

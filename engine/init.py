@@ -1,6 +1,7 @@
 # everything that needs to be done before the game starts.
 # we also use it get these starting values for the game.
 from engine import cooldowns , modifiers, states, fire
+from item import items
 from resources import resources
 
 
@@ -9,6 +10,7 @@ def initalize():
     set_starting_resource_values()
     set_base_modifiers()
     set_fire_intensity_states()
+    set_items()
 
 
 def set_cooldown_times():
@@ -28,6 +30,9 @@ def set_fire_intensity_states():
     global fstate
     fstate = states.FireIntensityStates().get_fire_states()
 
+def set_items():
+    global items
+    items = items.Items()
 
 
 
@@ -55,3 +60,9 @@ def get_cooldown_times():
         return cds
     except Exception as e:
         set_cooldown_times()
+
+def get_items():
+    try:
+        return items
+    except Exception as e:
+        raise
