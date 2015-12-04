@@ -25,3 +25,47 @@ class FireIntensityStates(object):
 
     def get_fire_state(self,intensity):
         return self.fire_states[intensity]
+
+#
+class Events(object):
+    def __init__(self):
+        self.burn_count = 0
+        self.wood_count = 0
+        self.stone_count = 0
+        self.start_achieved = False
+        self.wood_achieved  = False
+        self.stone_achieved = False
+        self.items_achieved = False
+
+    def update_props(self, **kwargs):
+        for key in kwargs:
+            if key == "burn_count":
+                self.burn_count = kwargs["burn_count"]
+            elif key == "wood_count":
+                self.wood_count = kwargs["wood_count"]
+            elif key == "stone_count":
+                self.stone_count = kwargs["stone_count"]
+
+
+    def check_events(self):
+        self.start_event()
+        self.wood_event()
+        self.stone_event()
+        self.items_event()
+
+
+    def start_event(self):
+        if self.burn_count <= 0:
+            self.start_achieved = True
+
+    def wood_event(self):
+        if self.burn_count >= 5:
+            self.wood_achieved = True
+
+    def stone_event(self):
+        if self.wood_count >= 25:
+            self.stone_achieved = True
+
+    def items_event(self):
+        if self.wood_count >= 50 and self.stone_count >= 10:
+            self.items_achieved = True

@@ -37,8 +37,8 @@ class Fire(object):
     def burn(self):
         self.intensity -= 15
         # can't go below 0.
-        if self.intesnity < 0:
-            self.intesnity = 0
+        if self.intensity < 0:
+            self.intensity = 0
 
 
     def get_current_kindle_count(self):
