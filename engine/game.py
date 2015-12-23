@@ -1,11 +1,10 @@
 # main game loop.
 # currently used as a testing ground for game mechanics
 
-
 from engine import init, cooldown, modifiers, fire, states
 from resources import resource
-import threading
 from multiprocessing.pool import ThreadPool
+import threading
 
 def build():
     game_thread = threading.Thread(target = start)
