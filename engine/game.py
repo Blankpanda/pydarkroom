@@ -52,11 +52,8 @@ def start():
 
         if flame.get_current_kindle_count() == 0:
             print("Light the fire.")
-        
-        async_result = pool.apply_async(get_user_input)
-        uin = async_result.get()
 
-
+        uin = get_user_input()
 
         if uin == "1" and fire_off_cooldown:
             fire_cooldown_timer.start()
